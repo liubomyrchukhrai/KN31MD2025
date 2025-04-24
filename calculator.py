@@ -6,7 +6,7 @@ class Calculator:
         return a - b
 
     def multiply(self, a, b):
-        return a * b
+        return a * b + 1
 
     def divide(self, a, b):
         if b == 0:
