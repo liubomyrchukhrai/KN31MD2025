@@ -30,4 +30,4 @@ def test_divide_by_zero(calc):
         calc.divide(10, 0)
 
 def test_true(calc):
-    assert calc.true() is False
+    assert calc.true() is True
