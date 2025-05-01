@@ -28,3 +28,6 @@ def test_divide(calc):
 def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.divide(10, 0)
+
+def test_true(calc):
+    assert calc.true() is True
