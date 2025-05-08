@@ -1,14 +1,21 @@
-class Calculator:
-    def add(self, a, b):
-        return a + b
+#include "calculator.h"
+#include <stdexcept>
 
-    def subtract(self, a, b):
-        return a - b
+int Calculator::add(int a, int b) {
+    return a + b;
+}
 
-    def multiply(self, a, b):
-        return a * b
+int Calculator::subtract(int a, int b) {
+    return a - b;
+}
 
-    def divide(self, a, b):
-        if b == 0:
-            raise ValueError("Cannot divide by zero.")
-        return a / b
+int Calculator::multiply(int a, int b) {
+    return a * b;
+}
+
+double Calculator::divide(double a, double b) {
+    if (b == 0) {
+        throw std::invalid_argument("Cannot divide by zero");
+    }
+    return a / b;
+}
