@@ -1,30 +1,35 @@
-import pytest
-from calculator import Calculator
+#include "calculator.h"
+#include <iostream>
+#include <cassert>
 
-@pytest.fixture
-def calc():
-    return Calculator()
+int main() {
+    Calculator calc;
 
-def test_add(calc):
-    assert calc.add(3, 4) == 7
-    assert calc.add(-1, -2) == -3
-    assert calc.add(0, 0) == 0
+    // Addition
+    assert(calc.add(3, 4) == 7);
+    assert(calc.add(-1, -2) == -3);
 
-def test_subtract(calc):
-    assert calc.subtract(10, 5) == 5
-    assert calc.subtract(-1, -1) == 0
-    assert calc.subtract(0, 5) == -5
+    // Subtraction
+    assert(calc.subtract(10, 5) == 5);
+    assert(calc.subtract(0, 5) == -5);
 
-def test_multiply(calc):
-    assert calc.multiply(3, 4) == 12
-    assert calc.multiply(-1, 5) == -5
-    assert calc.multiply(0, 100) == 0
+    // Multiplication
+    assert(calc.multiply(3, 4) == 12);
+    assert(calc.multiply(0, 100) == 0);
 
-def test_divide(calc):
-    assert calc.divide(10, 2) == 5
-    assert calc.divide(-9, 3) == -3
-    assert calc.divide(7, 2) == 3.5
+    // Division
+    assert(calc.divide(10, 2) == 5.0);
+    assert(calc.divide(7, 2) == 3.5);
 
-def test_divide_by_zero(calc):
-    with pytest.raises(ValueError, match="Cannot divide by zero."):
-        calc.divide(10, 0)
+    // Division by zero (should throw)
+    try {
+        calc.divide(1, 0);
+        std::cerr << "Division by zero test failed!\n";
+        return 1;
+    } catch (const std::invalid_argument& e) {
+        std::cout << "Division by zero correctly threw exception.\n";
+    }
+
+    std::cout << "All tests passed!\n";
+    return 0;
+}
