@@ -28,3 +28,11 @@ def test_divide(calc):
 def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.divide(10, 0)
+
+def test_chain_operations(calc):
+    result = calc.add(3, 5)      # 8
+    result = calc.multiply(result, 2)  # 16
+    result = calc.subtract(result, 4)  # 12
+    result = calc.divide(result, 2)    # 6.0
+    assert result == 6.0
+
