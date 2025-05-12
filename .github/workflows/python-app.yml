@@ -55,7 +55,7 @@ jobs:
           elif [ -f test ]; then
             ./test
           else
-            echo "No test executable found in build/"
+            echo "No C++ test executable found. Skipping C++ tests."
           fi
         else
-          echo "No build directory found, skipping C++ tests"
+          echo "No build directory found. Skipping C++ tests."
