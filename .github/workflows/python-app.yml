@@ -59,3 +59,4 @@ jobs:
           fi
         else
           echo "No build directory found. Skipping C++ tests."
+        fi
