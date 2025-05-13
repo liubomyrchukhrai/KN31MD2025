@@ -32,3 +32,5 @@ def test_power(calc):
     assert calc.power(2, 3) == 8
     assert calc.power(5, 0) == 1
     assert calc.power(2, -2) == 0.25
+    assert calc.power(0, 5) == 0
+    assert calc.power(0, 0) == 1  
