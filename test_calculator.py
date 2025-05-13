@@ -28,3 +28,7 @@ def test_divide(calc):
 def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.divide(10, 0)
+def test_power(calc):
+    assert calc.power(2, 3) == 8
+    assert calc.power(5, 0) == 1
+    assert calc.power(2, -2) == 0.25
