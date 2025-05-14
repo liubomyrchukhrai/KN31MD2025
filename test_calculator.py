@@ -28,3 +28,14 @@ def test_divide(calc):
 def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.divide(10, 0)
+
+def test_modulus(calc):
+    assert calc.modulus(10, 3) == 1
+    assert calc.modulus(9, 3) == 0
+    assert calc.modulus(-10, 3) == -1
+    assert calc.modulus(10, -3) == 1
+
+def test_modulus_by_zero(calc):
+    with pytest.raises(ValueError, match="Cannot divide by zero."):
+        calc.modulus(10, 0)
+
