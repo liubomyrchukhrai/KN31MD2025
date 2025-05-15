@@ -36,3 +36,8 @@ def test_chain_operations(calc):
     result = calc.divide(result, 2)    # 6.0
     assert result == 6.0
 
+def test_power(calc):
+    assert calc.power(2, 3) == 8
+    assert calc.power(5, 0) == 1
+    assert calc.power(4, 0.5) == 2
+    assert calc.power(-2, 3) == -8
