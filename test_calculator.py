@@ -36,3 +36,18 @@ def test_invalid_input_add(calc):
 def test_invalid_input_divide(calc):
     with pytest.raises(TypeError):
         calc.divide(10, "b")
+
+def test_modulus(calc):
+    assert calc.modulus(10, 3) == 1
+    assert calc.modulus(9, 3) == 0
+    assert calc.modulus(-10, 3) == 2   
+    assert calc.modulus(10, -3) == -2
+
+def test_modulus_by_zero(calc):
+    with pytest.raises(ValueError, match="Cannot divide by zero."):
+        calc.modulus(10, 0)
+
+def test_chained_operations(calc):
+    result = calc.multiply(calc.add(2, 3), 4) 
+    assert result == 20
+
