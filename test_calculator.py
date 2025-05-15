@@ -28,6 +28,14 @@ def test_divide(calc):
 def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.divide(10, 0)
+        
+def test_invalid_input_add(calc):
+    with pytest.raises(TypeError):
+        calc.add("a", 5)
+
+def test_invalid_input_divide(calc):
+    with pytest.raises(TypeError):
+        calc.divide(10, "b")
 
 def test_modulus(calc):
     assert calc.modulus(10, 3) == 1
@@ -48,4 +56,3 @@ def test_power(calc):
     assert calc.power(5, 0) == 1
     assert calc.power(2, -2) == 0.25
     assert calc.power(-3, 3) == -27
-
