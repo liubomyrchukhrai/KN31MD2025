@@ -28,3 +28,9 @@ class Calculator:
 
     def average(self, a, b):
         return (a + b) / 2
+
+    def sqrt(self, a):
+        if a < 0:
+            raise ValueError("Cannot take square root of negative number.")
+        return math.sqrt(a)
+
