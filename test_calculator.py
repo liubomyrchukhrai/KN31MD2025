@@ -39,3 +39,6 @@ def test_modulus_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.modulus(10, 0)
 
+def test_chained_operations(calc):
+    result = calc.multiply(calc.add(2, 3), 4) 
+    assert result == 20
