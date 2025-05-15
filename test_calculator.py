@@ -56,3 +56,11 @@ def test_power(calc):
     assert calc.power(5, 0) == 1
     assert calc.power(2, -2) == 0.25
     assert calc.power(-3, 3) == -27
+
+def test_sqrt(calc):
+    assert calc.sqrt(16) == 4
+    assert calc.sqrt(0) == 0
+    assert math.isclose(calc.sqrt(2), 1.41421356237, rel_tol=1e-9)
+
+    with pytest.raises(ValueError, match="Cannot take square root of negative number."):
+        calc.sqrt(-4)
