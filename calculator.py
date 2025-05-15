@@ -31,3 +31,8 @@ class Calculator:
         if a < 0:
             raise ValueError("Cannot take square root of negative number.")
         return math.sqrt(a)
+
+        def factorial(self, n):
+        if not isinstance(n, int) or n < 0:
+            raise ValueError("Factorial input must be a non-negative integer.")
+        return math.factorial(n)
