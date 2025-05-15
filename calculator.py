@@ -13,5 +13,7 @@ class Calculator:
             raise ValueError("Cannot divide by zero.")
         return a / b
         
-    def power(self, a, b):
-        return a ** b
+    def sqrt(self, a):
+        if a < 0:
+            raise ValueError("Cannot take square root of negative number.")
+        return math.sqrt(a)
