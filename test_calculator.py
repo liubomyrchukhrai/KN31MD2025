@@ -57,6 +57,6 @@ def test_power(calc):
     assert calc.power(2, -2) == 0.25
     assert calc.power(-3, 3) == -27
 
-def test_average(self):
+def test_average(calc):
     assert calc.average(4, 6) == 5
 
