@@ -36,8 +36,12 @@ def test_chain_operations(calc):
     result = calc.divide(result, 2)    # 6.0
     assert result == 6.0
 
-def test_power(calc):
-    assert calc.power(2, 3) == 8
-    assert calc.power(5, 0) == 1
-    assert calc.power(4, 0.5) == 2
-    assert calc.power(-2, 3) == -8
+def test_sqrt(calc):
+    assert calc.sqrt(4) == 2
+    assert calc.sqrt(0) == 0
+    assert calc.sqrt(1) == 1
+    assert round(calc.sqrt(2), 5) == round(2 ** 0.5, 5)
+
+def test_sqrt_negative(calc):
+    with pytest.raises(ValueError, match="Cannot take square root of negative number."):
+        calc.sqrt(-9)
