@@ -29,6 +29,13 @@ def test_divide_by_zero(calc):
     with pytest.raises(ValueError, match="Cannot divide by zero."):
         calc.divide(10, 0)
 
+def test_power(calc):
+    assert calc.power(2, 3) == 8
+    assert calc.power(5, 0) == 1
+    assert calc.power(2, -2) == 0.25
+    assert calc.power(0, 5) == 0
+    assert calc.power(0, 0) == 1  
+
 def test_modulus(calc):
     assert calc.modulus(10, 3) == 1
     assert calc.modulus(9, 3) == 0
@@ -42,3 +49,4 @@ def test_modulus_by_zero(calc):
 def test_chained_operations(calc):
     result = calc.multiply(calc.add(2, 3), 4) 
     assert result == 20
+
