@@ -23,7 +23,8 @@ class Calculator:
             raise ValueError("Cannot divide by zero.")
         return a % b
     
-    
     def power(self, a, b):
         return a ** b
 
+    def average(self, a, b):
+        return (a + b) / 2
