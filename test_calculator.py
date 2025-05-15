@@ -9,7 +9,7 @@ def test_add(calc):
     assert calc.add(3, 4) == 7
     assert calc.add(-1, -2) == -3
     assert calc.add(0, 0) == 0
-
+    
 def test_subtract(calc):
     assert calc.subtract(10, 5) == 5
     assert calc.subtract(-1, -1) == 0
@@ -42,3 +42,11 @@ def test_modulus_by_zero(calc):
 def test_chained_operations(calc):
     result = calc.multiply(calc.add(2, 3), 4) 
     assert result == 20
+
+def test_power(calc):
+    assert calc.power(2, 3) == 8
+    assert calc.power(5, 0) == 1
+    assert calc.power(2, -1) == 0.5
+    assert calc.power(-2, 3) == -8
+    assert calc.power(0, 5) == 0
+
