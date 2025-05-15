@@ -51,3 +51,8 @@ def test_chained_operations(calc):
     result = calc.multiply(calc.add(2, 3), 4) 
     assert result == 20
 
+def test_power(calc):
+    assert calc.power(2, 3) == 8
+    assert calc.power(5, 0) == 1
+    assert calc.power(2, -2) == 0.25
+    assert calc.power(-3, 3) == -27
